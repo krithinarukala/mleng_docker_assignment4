@@ -11,6 +11,7 @@ jobs:
     runs-on: ubuntu-latest
     # If the docker build went ok and the image was pushed to the docker repo, then deploy it to the server
     if: ${{ github.event.workflow_run.conclusion == 'success' }}
+    
     steps:
       - name: Deploy to Linux server
         uses: appleboy/ssh-action@v1.0.3
